@@ -18,7 +18,7 @@ module.exports = app => {
   };
 
   currentUser = (req, res) =>
-    res.send(req.session);
+    res.send(req.session['currentUser']);
 
   app.get ('/currentUser', currentUser);
   app.get ('/api/user', findAllUsers);
