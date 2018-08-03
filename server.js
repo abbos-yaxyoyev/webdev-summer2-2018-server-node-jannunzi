@@ -23,6 +23,9 @@ app.use(session({
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/webdev-summer2-2018');
 
-require('./services/user.service.server')(app);
+const userService = require('./services/user.service.server'); //(app);
+userService(app);
+
+require('./services/section.service.server')(app);
 
 app.listen(3000)
