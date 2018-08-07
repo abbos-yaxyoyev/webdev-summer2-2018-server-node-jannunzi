@@ -27,5 +27,8 @@ const userService = require('./services/user.service.server'); //(app);
 userService(app);
 
 require('./services/section.service.server')(app);
+require('./services/quiz.service.server')(app);
+require('./services/question.service.server')(app);
+
 
 app.listen(3000)
