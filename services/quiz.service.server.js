@@ -36,11 +36,16 @@ module.exports = app => {
       )
   }
 
+  submitQuiz = (req, res) => {
+    res.json(req.body)
+  }
+
   app.post('/api/quiz', createQuiz);
   app.get('/api/quiz', findAllQuizzes);
   app.get('/api/quiz/:qid', findQuizById);
   app.put('/api/quiz/:qid', updateQuiz);
   app.delete('/api/quiz/:qid', deleteQuiz);
   app.put('/api/quiz/:qid/question/:questionId', addQuestion);
+  app.post('/api/quiz/:qid/submission', submitQuiz)
 
 }
